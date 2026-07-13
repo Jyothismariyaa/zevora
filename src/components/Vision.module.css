@@ -1,5 +1,5 @@
 .section {
-  padding: 120px 0;
+  padding: var(--section-py) 0;
   border-top: 1px solid var(--border);
   background: var(--bg);
 }
@@ -7,7 +7,7 @@
 .inner {
   display: flex;
   flex-direction: column;
-  gap: 72px;
+  gap: 64px;
 }
 
 .label {
@@ -21,19 +21,19 @@
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 72px;
   align-items: center;
 }
 
 .textBlock {
   display: flex;
   flex-direction: column;
-  gap: 36px;
+  gap: 32px;
 }
 
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(28px, 3.5vw, 52px);
+  font-size: clamp(26px, 3.5vw, 52px);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.04em;
@@ -51,7 +51,7 @@
 .body {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 
 .para {
@@ -61,13 +61,13 @@
 }
 
 .lead {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--text);
   letter-spacing: -0.02em;
 }
 
-/* Orbit */
+/* ── Orbit ──────────────────────────────── */
 .visual {
   display: flex;
   align-items: center;
@@ -76,8 +76,8 @@
 
 .orbit {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 280px;
+  height: 280px;
 }
 
 .orbitCenter {
@@ -85,22 +85,21 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 72px;
-  height: 72px;
+  width: 68px;
+  height: 68px;
   border-radius: 50%;
   background: var(--text);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 800;
   color: #fff;
   z-index: 3;
 }
 
-.ring1,
-.ring2 {
+.ring1, .ring2 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -109,18 +108,18 @@
 }
 
 .ring1 {
-  width: 180px;
-  height: 180px;
-  margin-top: -90px;
-  margin-left: -90px;
+  width: 168px;
+  height: 168px;
+  margin-top: -84px;
+  margin-left: -84px;
   animation: spin 18s linear infinite;
 }
 
 .ring2 {
-  width: 300px;
-  height: 300px;
-  margin-top: -150px;
-  margin-left: -150px;
+  width: 280px;
+  height: 280px;
+  margin-top: -140px;
+  margin-left: -140px;
   animation: spin 30s linear infinite reverse;
 }
 
@@ -142,56 +141,74 @@
 .dot4 { top: 50%; left: -1px; transform: translateY(-50%) translateX(-50%); }
 
 .dot1 span, .dot2 span, .dot3 span, .dot4 span {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.03em;
   color: var(--text);
   white-space: nowrap;
   background: var(--white);
   border: 1px solid var(--border);
-  padding: 5px 12px;
+  padding: 4px 10px;
   border-radius: 100px;
   display: block;
   box-shadow: var(--shadow-sm);
 }
 
-.ring1 .dot1 span,
-.ring1 .dot2 span {
+.ring1 .dot1 span, .ring1 .dot2 span {
   animation: spin 18s linear infinite reverse;
 }
 
-.ring2 .dot3 span,
-.ring2 .dot4 span {
+.ring2 .dot3 span, .ring2 .dot4 span {
   animation: spin 30s linear infinite;
 }
 
+/* ── Tablet ───────────────────────────── */
+@media (max-width: 1024px) {
+  .content {
+    gap: 48px;
+  }
+}
+
+/* ── Mobile landscape → stack ─────────── */
 @media (max-width: 900px) {
   .content {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 56px;
   }
+
   .visual {
     order: -1;
   }
+}
+
+/* ── Mobile ───────────────────────────── */
+@media (max-width: 480px) {
   .orbit {
-    width: 240px;
-    height: 240px;
+    width: 220px;
+    height: 220px;
   }
+
   .orbitCenter {
-    width: 56px;
-    height: 56px;
+    width: 54px;
+    height: 54px;
     font-size: 20px;
   }
+
   .ring1 {
-    width: 140px;
-    height: 140px;
-    margin-top: -70px;
-    margin-left: -70px;
+    width: 130px;
+    height: 130px;
+    margin-top: -65px;
+    margin-left: -65px;
   }
+
   .ring2 {
-    width: 240px;
-    height: 240px;
-    margin-top: -120px;
-    margin-left: -120px;
+    width: 220px;
+    height: 220px;
+    margin-top: -110px;
+    margin-left: -110px;
+  }
+
+  .inner {
+    gap: 48px;
   }
 }

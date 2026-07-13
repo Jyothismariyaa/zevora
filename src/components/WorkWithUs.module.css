@@ -1,5 +1,5 @@
 .section {
-  padding: 120px 0;
+  padding: var(--section-py) 0;
   border-top: 1px solid var(--border);
   background: var(--white);
 }
@@ -7,7 +7,7 @@
 .inner {
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 56px;
 }
 
 .label {
@@ -21,13 +21,13 @@
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 72px;
   align-items: start;
 }
 
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(32px, 4.5vw, 60px);
+  font-size: clamp(28px, 4.5vw, 60px);
   font-weight: 800;
   line-height: 1.08;
   letter-spacing: -0.04em;
@@ -53,82 +53,23 @@
 .right {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
   padding-top: 8px;
 }
 
 .desc {
-  font-size: 15px;
-  line-height: 1.75;
-  color: var(--text-2);
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 12px;
-}
-
-.inputWrap {
-  display: flex;
-  gap: 8px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 100px;
-  padding: 5px 5px 5px 20px;
-  align-items: center;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.inputWrap:focus-within {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-dim);
-}
-
-.input {
-  flex: 1;
-  background: none;
-  border: none;
-  outline: none;
-  font-family: var(--font-body);
   font-size: 14px;
-  color: var(--text);
-  min-width: 0;
-}
-
-.input::placeholder {
-  color: var(--text-3);
-}
-
-.submit {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--text);
-  color: var(--white);
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 600;
-  padding: 10px 20px;
-  border-radius: 100px;
-  cursor: pointer;
-  white-space: nowrap;
-  flex-shrink: 0;
-  transition: opacity 0.2s;
-}
-
-.submit:hover {
-  opacity: 0.78;
+  line-height: 1.8;
+  color: var(--text-2);
 }
 
 .contactCard {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 28px 32px;
+  padding: 24px 28px;
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: 18px;
   background: var(--bg);
   margin-top: 8px;
 }
@@ -146,11 +87,12 @@
   align-items: center;
   gap: 8px;
   font-family: var(--font-display);
-  font-size: clamp(18px, 2.5vw, 26px);
+  font-size: clamp(16px, 2.2vw, 24px);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--text);
   transition: color 0.2s;
+  word-break: break-all;
 }
 
 .emailLink:hover {
@@ -158,7 +100,8 @@
 }
 
 .emailLink svg {
-  opacity: 0.5;
+  flex-shrink: 0;
+  opacity: 0.45;
   transition: opacity 0.2s, transform 0.2s;
 }
 
@@ -172,44 +115,25 @@
   color: var(--text-3);
 }
 
-.thankYou {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 28px;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  background: var(--bg-subtle);
-  margin-top: 12px;
-}
-
-.checkIcon {
-  font-size: 18px;
-  color: var(--accent);
-}
-
-.thankYou p {
-  font-size: 14px;
-  color: var(--text-2);
-}
-
+/* ── Tablet ───────────────────────────── */
 @media (max-width: 900px) {
   .content {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  .inputWrap {
-    flex-direction: column;
-    border-radius: 16px;
-    padding: 12px;
-    gap: 12px;
-    align-items: stretch;
+
+  .right {
+    padding-top: 0;
   }
-  .input {
-    padding: 4px;
+}
+
+/* ── Mobile ───────────────────────────── */
+@media (max-width: 480px) {
+  .inner {
+    gap: 40px;
   }
-  .submit {
-    justify-content: center;
-    border-radius: 10px;
+
+  .contactCard {
+    padding: 20px;
   }
 }

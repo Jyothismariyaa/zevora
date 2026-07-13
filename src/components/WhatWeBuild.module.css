@@ -1,5 +1,5 @@
 .section {
-  padding: 120px 0;
+  padding: var(--section-py) 0;
   border-top: 1px solid var(--border);
   background: var(--white);
 }
@@ -7,13 +7,14 @@
 .inner {
   display: flex;
   flex-direction: column;
-  gap: 72px;
+  gap: 64px;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  gap: 24px;
 }
 
 .label {
@@ -22,11 +23,12 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-3);
+  flex-shrink: 0;
 }
 
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(56px, 9vw, 112px);
+  font-size: clamp(52px, 9vw, 112px);
   font-weight: 800;
   letter-spacing: -0.05em;
   color: var(--text);
@@ -50,8 +52,8 @@
   display: grid;
   grid-template-columns: 44px 1fr 1fr 28px;
   align-items: center;
-  gap: 24px;
-  padding: 24px 12px;
+  gap: 20px;
+  padding: 22px 12px;
   border-top: 1px solid var(--border);
   border-radius: 10px;
   cursor: default;
@@ -76,7 +78,7 @@
 
 .rowTitle {
   font-family: var(--font-display);
-  font-size: clamp(17px, 2vw, 24px);
+  font-size: clamp(16px, 2vw, 22px);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--text);
@@ -101,22 +103,60 @@
   transform: translate(2px, -2px);
 }
 
-@media (max-width: 768px) {
+/* ── Tablet ───────────────────────────── */
+@media (max-width: 900px) {
+  .row {
+    grid-template-columns: 36px 1fr 28px;
+  }
+
+  .rowDesc {
+    display: none;
+  }
+}
+
+/* ── Mobile ───────────────────────────── */
+@media (max-width: 600px) {
   .header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: 8px;
   }
+
+  .inner {
+    gap: 48px;
+  }
+
   .row {
-    grid-template-columns: 36px 1fr 24px;
-    grid-template-rows: auto auto;
+    grid-template-columns: 32px 1fr 24px;
+    padding: 18px 8px;
+    margin: 0 -8px;
   }
+
+  .rowTitle {
+    font-size: 15px;
+  }
+}
+
+/* ── Small mobile — show desc again stacked ── */
+@media (max-width: 480px) {
+  .row {
+    grid-template-columns: 32px 1fr 24px;
+    grid-template-rows: auto auto;
+    row-gap: 4px;
+    padding: 16px 8px;
+  }
+
   .rowDesc {
+    display: block;
     grid-column: 2;
     grid-row: 2;
     font-size: 12px;
+    color: var(--text-3);
   }
+
   .rowArrow {
     grid-row: 1;
+    align-self: start;
+    padding-top: 2px;
   }
 }

@@ -1,5 +1,5 @@
 .section {
-  padding: 120px 0;
+  padding: var(--section-py) 0;
   border-top: 1px solid var(--border);
   background: var(--bg);
 }
@@ -7,14 +7,14 @@
 .inner {
   display: flex;
   flex-direction: column;
-  gap: 72px;
+  gap: 64px;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  gap: 40px;
+  gap: 32px;
 }
 
 .label {
@@ -23,11 +23,12 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-3);
+  flex-shrink: 0;
 }
 
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(28px, 4vw, 52px);
+  font-size: clamp(24px, 4vw, 52px);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.03em;
@@ -46,17 +47,16 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 14px;
 }
 
 .card {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 20px;
-  padding: 40px;
+  padding: 36px;
   display: flex;
   flex-direction: column;
-  gap: 0;
   box-shadow: var(--shadow-sm);
   transition: box-shadow 0.25s, transform 0.25s;
   cursor: default;
@@ -71,7 +71,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 }
 
 .cardIndex {
@@ -96,12 +96,12 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .productName {
   font-family: var(--font-display);
-  font-size: 32px;
+  font-size: clamp(24px, 3vw, 32px);
   font-weight: 800;
   letter-spacing: -0.03em;
   color: var(--text);
@@ -126,7 +126,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-top: 40px;
+  margin-top: 36px;
 }
 
 .tags {
@@ -164,7 +164,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 48px;
+  padding: 48px 32px;
   grid-column: span 2;
 }
 
@@ -173,8 +173,8 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 14px;
-  max-width: 440px;
+  gap: 12px;
+  max-width: 420px;
 }
 
 .moreIcon {
@@ -193,7 +193,7 @@
 
 .moreTitle {
   font-family: var(--font-display);
-  font-size: 24px;
+  font-size: clamp(20px, 2.5vw, 26px);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--text);
@@ -206,22 +206,46 @@
   color: var(--text-2);
 }
 
+/* ── Tablet ───────────────────────────── */
 @media (max-width: 900px) {
   .header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: 12px;
   }
+
   .heading {
     text-align: left;
   }
+}
+
+/* ── Mobile ───────────────────────────── */
+@media (max-width: 700px) {
   .grid {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
+
   .cardMore {
     grid-column: span 1;
+    padding: 36px 24px;
   }
+
   .card {
-    padding: 28px;
+    padding: 24px;
+  }
+
+  .cardTop {
+    margin-bottom: 24px;
+  }
+
+  .cardFooter {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inner {
+    gap: 48px;
   }
 }

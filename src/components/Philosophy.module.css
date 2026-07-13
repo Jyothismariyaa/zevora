@@ -1,5 +1,5 @@
 .section {
-  padding: 120px 0;
+  padding: var(--section-py) 0;
   border-top: 1px solid var(--border);
   background: var(--bg-dark);
 }
@@ -7,7 +7,7 @@
 .inner {
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 56px;
 }
 
 .label {
@@ -15,19 +15,19 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.28);
 }
 
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 72px;
   align-items: start;
 }
 
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(32px, 4.5vw, 64px);
+  font-size: clamp(28px, 4.5vw, 64px);
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.04em;
@@ -46,21 +46,21 @@
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 400;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.55);
 }
 
 .body {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 22px;
   padding-top: 8px;
 }
 
 .quote {
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 400;
-  color: rgba(255,255,255,0.9);
-  line-height: 1.5;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.55;
   border-left: 2px solid var(--accent);
   padding-left: 20px;
   font-style: normal;
@@ -69,14 +69,14 @@
 .para {
   font-size: 14px;
   line-height: 1.85;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.42);
 }
 
 .pillars {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
 .pillar {
@@ -85,7 +85,7 @@
   gap: 12px;
   font-size: 13px;
   font-weight: 500;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.5);
 }
 
 .pillarDot {
@@ -96,9 +96,21 @@
   flex-shrink: 0;
 }
 
+/* ── Tablet ───────────────────────────── */
 @media (max-width: 900px) {
   .content {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+}
+
+/* ── Mobile ───────────────────────────── */
+@media (max-width: 480px) {
+  .inner {
+    gap: 40px;
+  }
+
+  .quote {
+    font-size: 16px;
   }
 }
