@@ -21,11 +21,6 @@ export default function Hero() {
     <section className={styles.hero}>
       <div className={`container ${styles.inner}`}>
 
-        <div className={styles.badge}>
-          <span className={styles.badgeDot} />
-          Building products that solve real problems.
-        </div>
-
         <h1 ref={headingRef} className={styles.heading}>
           We build software{' '}
           <em className={styles.italic}>people love</em>{' '}
