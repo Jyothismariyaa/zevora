@@ -7,14 +7,14 @@
 .inner {
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 56px;
 }
 
 .top {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  gap: 40px;
+  gap: 32px;
 }
 
 .label {
@@ -24,6 +24,7 @@
   text-transform: uppercase;
   color: var(--text-3);
   flex-shrink: 0;
+  padding-top: 6px;
 }
 
 .heading {
@@ -47,14 +48,14 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
+  gap: 10px;
 }
 
 .card {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 28px 22px;
+  padding: 24px 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -78,24 +79,22 @@
 
 .cardTitle {
   font-family: var(--font-display);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--text);
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .cardDesc {
   font-size: 13px;
-  line-height: 1.65;
+  line-height: 1.6;
   color: var(--text-2);
 }
 
-/* ── 3-col at 1100px ─────────────────── */
+/* ── 3-col ────────────────────────────── */
 @media (max-width: 1100px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  .grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 /* ── Tablet ───────────────────────────── */
@@ -103,31 +102,19 @@
   .top {
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+    gap: 8px;
   }
 
-  .heading {
-    text-align: left;
-  }
+  .heading { text-align: left; }
 
   .grid {
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-
-  .card {
-    padding: 22px 18px;
+    gap: 8px;
   }
 }
 
 /* ── Mobile ───────────────────────────── */
-@media (max-width: 480px) {
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-
-  .inner {
-    gap: 48px;
-  }
+@media (max-width: 420px) {
+  .grid { grid-template-columns: 1fr; }
+  .inner { gap: 44px; }
 }

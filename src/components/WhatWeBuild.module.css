@@ -2,19 +2,20 @@
   padding: var(--section-py) 0;
   border-top: 1px solid var(--border);
   background: var(--white);
+  overflow: hidden;
 }
 
 .inner {
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 56px;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  gap: 24px;
+  gap: 16px;
 }
 
 .label {
@@ -24,11 +25,12 @@
   text-transform: uppercase;
   color: var(--text-3);
   flex-shrink: 0;
+  padding-top: 6px;
 }
 
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(52px, 9vw, 112px);
+  font-size: clamp(48px, 9vw, 112px);
   font-weight: 800;
   letter-spacing: -0.05em;
   color: var(--text);
@@ -46,27 +48,25 @@
 .list {
   display: flex;
   flex-direction: column;
+  border-top: 1px solid var(--border);
 }
 
 .row {
-  display: grid;
-  grid-template-columns: 44px 1fr 1fr 28px;
+  display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 22px 12px;
-  border-top: 1px solid var(--border);
-  border-radius: 10px;
-  cursor: default;
-  transition: background 0.2s;
-  margin: 0 -12px;
-}
-
-.row:last-child {
+  gap: 16px;
+  padding: 20px 0;
   border-bottom: 1px solid var(--border);
+  cursor: default;
+  transition: background 0.2s, padding 0.2s;
+  border-radius: 8px;
 }
 
 .row:hover {
   background: var(--bg-subtle);
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0 -10px;
 }
 
 .rowNum {
@@ -74,6 +74,8 @@
   font-weight: 600;
   letter-spacing: 0.06em;
   color: var(--text-3);
+  flex-shrink: 0;
+  width: 32px;
 }
 
 .rowTitle {
@@ -82,12 +84,16 @@
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--text);
+  flex-shrink: 0;
+  width: 220px;
 }
 
 .rowDesc {
   font-size: 13px;
   color: var(--text-2);
   line-height: 1.5;
+  flex: 1;
+  min-width: 0;
 }
 
 .rowArrow {
@@ -104,13 +110,14 @@
 }
 
 /* ── Tablet ───────────────────────────── */
-@media (max-width: 900px) {
-  .row {
-    grid-template-columns: 36px 1fr 28px;
-  }
-
+@media (max-width: 860px) {
   .rowDesc {
     display: none;
+  }
+
+  .rowTitle {
+    width: auto;
+    flex: 1;
   }
 }
 
@@ -119,44 +126,50 @@
   .header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+    gap: 4px;
   }
 
   .inner {
-    gap: 48px;
+    gap: 40px;
   }
 
   .row {
-    grid-template-columns: 32px 1fr 24px;
-    padding: 18px 8px;
+    padding: 18px 0;
+  }
+
+  .row:hover {
+    padding-left: 8px;
+    padding-right: 8px;
     margin: 0 -8px;
   }
 
+  .rowNum {
+    width: 28px;
+  }
+
   .rowTitle {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
-/* ── Small mobile — show desc again stacked ── */
-@media (max-width: 480px) {
+/* ── Small mobile — desc returns stacked ── */
+@media (max-width: 420px) {
   .row {
-    grid-template-columns: 32px 1fr 24px;
-    grid-template-rows: auto auto;
+    flex-wrap: wrap;
     row-gap: 4px;
-    padding: 16px 8px;
+    padding: 16px 0;
+  }
+
+  .rowArrow {
+    margin-left: auto;
   }
 
   .rowDesc {
     display: block;
-    grid-column: 2;
-    grid-row: 2;
+    flex-basis: 100%;
+    padding-left: 36px;
     font-size: 12px;
     color: var(--text-3);
-  }
-
-  .rowArrow {
-    grid-row: 1;
-    align-self: start;
-    padding-top: 2px;
+    line-height: 1.55;
   }
 }

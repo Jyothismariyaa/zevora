@@ -7,7 +7,7 @@
 .inner {
   display: flex;
   flex-direction: column;
-  gap: 56px;
+  gap: 48px;
 }
 
 .label {
@@ -21,13 +21,13 @@
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 72px;
+  gap: 64px;
   align-items: start;
 }
 
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(28px, 4.5vw, 64px);
+  font-size: clamp(26px, 4.5vw, 64px);
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.04em;
@@ -46,30 +46,30 @@
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 400;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.5);
 }
 
 .body {
   display: flex;
   flex-direction: column;
-  gap: 22px;
-  padding-top: 8px;
+  gap: 20px;
+  padding-top: 4px;
 }
 
 .quote {
-  font-size: 19px;
+  font-size: clamp(16px, 2vw, 19px);
   font-weight: 400;
   color: rgba(255,255,255,0.88);
   line-height: 1.55;
   border-left: 2px solid var(--accent);
-  padding-left: 20px;
+  padding-left: 18px;
   font-style: normal;
 }
 
 .para {
   font-size: 14px;
   line-height: 1.85;
-  color: rgba(255,255,255,0.42);
+  color: rgba(255,255,255,0.4);
 }
 
 .pillars {
@@ -85,7 +85,7 @@
   gap: 12px;
   font-size: 13px;
   font-weight: 500;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.48);
 }
 
 .pillarDot {
@@ -97,20 +97,14 @@
 }
 
 /* ── Tablet ───────────────────────────── */
-@media (max-width: 900px) {
+@media (max-width: 860px) {
   .content {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
   }
 }
 
 /* ── Mobile ───────────────────────────── */
 @media (max-width: 480px) {
-  .inner {
-    gap: 40px;
-  }
-
-  .quote {
-    font-size: 16px;
-  }
+  .inner { gap: 36px; }
 }

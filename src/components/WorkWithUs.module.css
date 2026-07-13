@@ -7,7 +7,7 @@
 .inner {
   display: flex;
   flex-direction: column;
-  gap: 56px;
+  gap: 48px;
 }
 
 .label {
@@ -21,13 +21,13 @@
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 72px;
+  gap: 64px;
   align-items: start;
 }
 
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(28px, 4.5vw, 60px);
+  font-size: clamp(26px, 4.5vw, 60px);
   font-weight: 800;
   line-height: 1.08;
   letter-spacing: -0.04em;
@@ -53,8 +53,8 @@
 .right {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  padding-top: 8px;
+  gap: 16px;
+  padding-top: 4px;
 }
 
 .desc {
@@ -67,9 +67,9 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 24px 28px;
+  padding: 20px 24px;
   border: 1px solid var(--border);
-  border-radius: 18px;
+  border-radius: 16px;
   background: var(--bg);
   margin-top: 8px;
 }
@@ -87,7 +87,7 @@
   align-items: center;
   gap: 8px;
   font-family: var(--font-display);
-  font-size: clamp(16px, 2.2vw, 24px);
+  font-size: clamp(15px, 2.2vw, 22px);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--text);
@@ -95,13 +95,11 @@
   word-break: break-all;
 }
 
-.emailLink:hover {
-  color: var(--accent);
-}
+.emailLink:hover { color: var(--accent); }
 
 .emailLink svg {
   flex-shrink: 0;
-  opacity: 0.45;
+  opacity: 0.4;
   transition: opacity 0.2s, transform 0.2s;
 }
 
@@ -116,24 +114,18 @@
 }
 
 /* ── Tablet ───────────────────────────── */
-@media (max-width: 900px) {
+@media (max-width: 860px) {
   .content {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
   }
 
-  .right {
-    padding-top: 0;
-  }
+  .right { padding-top: 0; }
 }
 
 /* ── Mobile ───────────────────────────── */
 @media (max-width: 480px) {
-  .inner {
-    gap: 40px;
-  }
+  .inner { gap: 36px; }
 
-  .contactCard {
-    padding: 20px;
-  }
+  .contactCard { padding: 16px 18px; }
 }
