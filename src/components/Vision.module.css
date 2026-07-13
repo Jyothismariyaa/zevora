@@ -1,0 +1,197 @@
+.section {
+  padding: 120px 0;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.5vw, 52px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.heading.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.para {
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--text-2);
+}
+
+.lead {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+/* Orbit */
+.visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orbit {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.orbitCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  z-index: 3;
+}
+
+.ring1,
+.ring2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+}
+
+.ring1 {
+  width: 180px;
+  height: 180px;
+  margin-top: -90px;
+  margin-left: -90px;
+  animation: spin 18s linear infinite;
+}
+
+.ring2 {
+  width: 300px;
+  height: 300px;
+  margin-top: -150px;
+  margin-left: -150px;
+  animation: spin 30s linear infinite reverse;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.dot1, .dot2, .dot3, .dot4 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dot1 { top: -14px; left: 50%; transform: translateX(-50%); }
+.dot2 { bottom: -14px; left: 50%; transform: translateX(-50%); }
+.dot3 { top: 50%; right: -1px; transform: translateY(-50%) translateX(50%); }
+.dot4 { top: 50%; left: -1px; transform: translateY(-50%) translateX(-50%); }
+
+.dot1 span, .dot2 span, .dot3 span, .dot4 span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--text);
+  white-space: nowrap;
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 5px 12px;
+  border-radius: 100px;
+  display: block;
+  box-shadow: var(--shadow-sm);
+}
+
+.ring1 .dot1 span,
+.ring1 .dot2 span {
+  animation: spin 18s linear infinite reverse;
+}
+
+.ring2 .dot3 span,
+.ring2 .dot4 span {
+  animation: spin 30s linear infinite;
+}
+
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .visual {
+    order: -1;
+  }
+  .orbit {
+    width: 240px;
+    height: 240px;
+  }
+  .orbitCenter {
+    width: 56px;
+    height: 56px;
+    font-size: 20px;
+  }
+  .ring1 {
+    width: 140px;
+    height: 140px;
+    margin-top: -70px;
+    margin-left: -70px;
+  }
+  .ring2 {
+    width: 240px;
+    height: 240px;
+    margin-top: -120px;
+    margin-left: -120px;
+  }
+}

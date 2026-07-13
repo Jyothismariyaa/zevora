@@ -1,0 +1,122 @@
+.section {
+  padding: 120px 0;
+  border-top: 1px solid var(--border);
+  background: var(--white);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(56px, 9vw, 112px);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: var(--text);
+  line-height: 0.9;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.heading.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 44px 1fr 1fr 28px;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 12px;
+  border-top: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: default;
+  transition: background 0.2s;
+  margin: 0 -12px;
+}
+
+.row:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.row:hover {
+  background: var(--bg-subtle);
+}
+
+.rowNum {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--text-3);
+}
+
+.rowTitle {
+  font-family: var(--font-display);
+  font-size: clamp(17px, 2vw, 24px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.rowDesc {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+
+.rowArrow {
+  font-size: 15px;
+  color: var(--text-3);
+  text-align: right;
+  transition: color 0.2s, transform 0.2s;
+  display: inline-block;
+}
+
+.row:hover .rowArrow {
+  color: var(--accent);
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .row {
+    grid-template-columns: 36px 1fr 24px;
+    grid-template-rows: auto auto;
+  }
+  .rowDesc {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 12px;
+  }
+  .rowArrow {
+    grid-row: 1;
+  }
+}
