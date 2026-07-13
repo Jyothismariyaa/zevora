@@ -9,7 +9,7 @@ export default function Footer() {
 
         <div className={styles.top}>
           <div className={styles.brand}>
-            <span className={styles.logo}>Zevora™</span>
+            <span className={styles.logo}>Zevora</span>
             <p className={styles.tagline}>Building products that build people.</p>
           </div>
 

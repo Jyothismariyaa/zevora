@@ -58,7 +58,9 @@ export default function WhatWeBuild() {
               <span className={styles.rowNum}>{item.n}</span>
               <h3 className={styles.rowTitle}>{item.title}</h3>
               <p className={styles.rowDesc}>{item.desc}</p>
-              <span className={styles.rowArrow}>↗</span>
+              <svg className={styles.rowArrow} width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </div>
           ))}
         </div>

@@ -91,11 +91,11 @@
 }
 
 .rowArrow {
-  font-size: 15px;
+  display: block;
   color: var(--text-3);
-  text-align: right;
+  flex-shrink: 0;
+  margin-left: auto;
   transition: color 0.2s, transform 0.2s;
-  display: inline-block;
 }
 
 .row:hover .rowArrow {
