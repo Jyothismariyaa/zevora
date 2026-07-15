@@ -39,18 +39,6 @@ export default function Contact() {
           <div className={styles.card}>
             <div className={styles.cardIcon}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <circle cx="10" cy="10" r="7.5" stroke="currentColor" strokeWidth="1.4"/>
-                <path d="M10 6v4l2.5 2.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
-              </svg>
-            </div>
-            <div className={styles.cardLabel}>Products</div>
-            <a href="mailto:hello@dropn.shop" className={styles.cardValue}>hello@dropn.shop</a>
-            <p className={styles.cardNote}>DropnShop & product-specific questions.</p>
-          </div>
-
-          <div className={styles.card}>
-            <div className={styles.cardIcon}>
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M10 2C6.13 2 3 5.13 3 9c0 5.25 7 11 7 11s7-5.75 7-11c0-3.87-3.13-7-7-7z" stroke="currentColor" strokeWidth="1.4"/>
                 <circle cx="10" cy="9" r="2.5" stroke="currentColor" strokeWidth="1.4"/>
               </svg>

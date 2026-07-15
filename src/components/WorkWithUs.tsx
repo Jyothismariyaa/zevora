@@ -28,8 +28,8 @@ export default function WorkWithUs() {
 
             <div className={styles.contactCard}>
               <div className={styles.contactLabel}>Start a conversation</div>
-              <a href="mailto:hello@dropn.shop" className={styles.emailLink}>
-                hello@dropn.shop
+              <a href="mailto:hello@zevora.io" className={styles.emailLink}>
+                hello@zevora.io
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                   <path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
